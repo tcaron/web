@@ -1,0 +1,19 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+
+front_skills:
+    path:     /competences
+    defaults: { _controller: FrontBundle:Default:skills }
+
+front_contact:
+    path:     /contact
+    defaults: { _controller: FrontBundle:Contact:index }
+
+front_resume:
+    path:     /cv
+    defaults: { _controller: FrontBundle:Default:resume }
+
+front_blog:
+    path:     /blog
+    defaults: { _controller: FrontBundle:Default:blog }

@@ -1,0 +1,61 @@
+{% extends 'FrontBundle:Default:layout.html.twig' %}
+
+{% block body %}
+<div id="ww">
+
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<h1>Mes compétences</h1>
+					<p>Grâce à ma formation, à une veille technologique régulière et aux différents projets que j'ai pu mener à bien, j'ai pu développé des compétences dans plusieurs technologies, pour la plupart orienté autour du web.</p>				
+				</div>
+			</div>
+	    </div> 
+</div>
+
+<div class="container pt">
+		<div class="row mt centered">
+			<div class="col-lg-6">
+			<h2>Les technologies que j'utilise:</h2>
+			<div class="centered">
+				<div id="skill" class="sk" data-width="60" data-background="#FFC107">PHP7 (60%)</div>
+				<div id="skill1" class="sk" data-width="40" data-background="#e67e22">JavaScript (40%)</div>
+				<div id="skill2" class="sk" data-width="60" data-background="#e74c3c">JQuery (60%)</div>
+				<div id="skill3" class="sk" data-width="80" data-background="#16a085">CSS3 (80%)</div>
+				<div id="skill4" class="sk" data-width="80" data-background="#27ae60">HTML5/XML (80%)</div>
+				<div id="skill7" class="sk" data-width="70" data-background="#2980b9">MySQL (70%)</div>                     
+				<div id="skill5" class="sk" data-width="50" data-background="#9b59b6">Symfony3 (50%)</div>
+				<div id="skill6" class="sk" data-width="35" data-background="#f39c12">Java (35%)</div>
+			</div>
+			</div>
+			<div class="col-lg-6 img-tools">
+				<h2>Outils & IDE:</h2>
+				<div class="col-lg-6">
+					<img alt="intellij" src="{{asset('bundles/front/img/intelij.png')}}">
+					<br>
+					<img alt="nodejs" src="{{asset('bundles/front/img/node.png')}}">
+					<br>
+					<img alt="bootstrap" src="{{asset('bundles/front/img/bootstrap.png')}}">
+					<br>
+					<img alt="phpstorm" src="{{asset('bundles/front/img/phpstorm.png')}}">
+				</div>
+				<div class="col-lg-6">
+					<img alt="sublimetext" src="{{asset('bundles/front/img/st3.png')}}">
+					<br>
+					<img alt="phpmyadmin" src="{{asset('bundles/front/img/phpmyadmin.png')}}">
+					<br>
+					<img alt="git" src="{{asset('bundles/front/img/git.png')}}">
+					<br>
+					<img alt="webstorm" src="{{asset('bundles/front/img/webstorm.png')}}">
+				</div>
+			</div>			
+		</div>
+		
+</div>
+	
+{% endblock %}
+
+{% block js %}
+	<script src="{{ asset('bundles/front/js/simple-skillbar.js')}}"></script>
+	<script>$('.sk').simpleSkillbar({});</script>
+{% endblock %}

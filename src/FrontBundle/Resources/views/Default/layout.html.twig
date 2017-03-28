@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{{asset('bundles/front/img/favtc.png')}}" />
+    <title>Thomas Caron</title>	        
+   <link href="{{ asset('bundles/front/css/bootstrap.css') }}" rel="stylesheet">
+   <link href="{{ asset('bundles/front/css/main.css') }}" rel="stylesheet">   
+   <script type="text/javascript" src="{{ asset('bundles/front/js/jquery-3.2.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/front/js/bootstrap.min.js') }}"></script>
+   {% block assets %} {% endblock %}  
+  
+   
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{path('front_homepage')}}"><img class="logotc" src="{{asset('bundles/front/img/logothomas.png')}}"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ path('front_homepage') }}">Accueil</a></li>
+            <li><a href="{{ path('front_skills') }}">Compétences</a></li>
+            <li><a href="{{ path('front_resume') }}">CV</a></li>
+            <li><a href="{{ path('front_blog') }}">Blog</a></li>
+            <li><a href="{{ path('front_contact') }}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> 
+  {% block body %}{% endblock %} 
+</body>
+
+<footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>Où me trouver ?</h4>
+          <p>Lille, France</p>
+        </div><!-- /col-lg-4 -->       
+        <div class="col-lg-4">
+          <h4>Réseaux sociaux</h4>
+          <p>
+            <a href="https://github.com/tcaron">Github</a><br/>
+            <a href="http://www.viadeo.com/p/002mlb0y4l5lcih">Viadeo</a><br/>
+            <a href="https://www.linkedin.com/in/caronthomas/">Linkedin</a>
+          </p>
+        </div><!-- /col-lg-4 -->    
+        <div class="col-lg-4">
+          <h4>À propos</h4>
+          <p>Réalisé avec le framework Symfony {{ sfVersion }}<br>
+          Thomas Caron © 2017</p>
+        </div><!-- /col-lg-4 -->      
+      </div>   
+    </div>
+</footer>
+
+{% block js %}
+{% endblock %}

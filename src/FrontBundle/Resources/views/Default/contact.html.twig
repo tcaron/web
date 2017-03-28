@@ -1,0 +1,63 @@
+{% extends 'FrontBundle:Default:layout.html.twig' %}
+
+{% block body %}
+
+	<div class="container pt">
+		<div class="row mt">
+		   <div class="col-lg-8 col-lg-offset-2 centered">
+			   <h2 class="alt">Où me trouver ?</h2>
+			</div>        
+		</div>	        
+		<div clas="row mt">
+			<div id="map"></div>
+		</div>   
+		
+
+		<div class="row mt">
+			<div class="col-lg-6 col-lg-offset-3 centered">
+				<h1 class="alt">Contactez-moi</h1>
+				{% for flash_message in app.session.flashBag.get('contact') %}
+    			<div class="alert alert-success">{{ flash_message }}</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="row mt">	
+			<div class="col-lg-8 col-lg-offset-2">
+				{{form_start(form)}}
+				  <div class="form-group">
+				    {{form_widget(form.name,{'attr' : {'class' :'form-control', 'placeholder' : 'Votre nom'}})}}
+				    <br>
+				  </div>
+				  <div class="form-group">
+				     {{form_widget(form.mail,{'attr' : {'class' :'form-control', 'placeholder' : 'Votre e-mail'}})}}
+				    <br>
+				  </div>
+				  <div class="form-group">
+				     {{form_widget(form.subject,{'attr' : {'class' :'form-control', 'placeholder' : 'Sujet de votre demande de contact'}})}}
+				    <br>
+				  </div>
+				 <div class="form-group">
+				     {{form_widget(form.message,{'attr' : {'class' :'form-control', 'rows' : '10', 'maxlength': '1000', 'placeholder' : 'Entrez votre message'}})}}
+				 </div>
+				      {{form_widget(form.submit,{'attr' : {'class' :'btn btn-success'}, 'label' : 'Envoyer'})}}
+				{{form_end(form)}}   			
+			</div>
+		</div><!-- /row -->
+	</div><!-- /container -->
+
+{% endblock %}
+
+{% block js %}
+	<script src="http://maps.google.com/maps/api/js?key=AIzaSyDKGsvVViuHE3RmyYWRfXYaXPeQ2w-t_8c"></script>
+	<script src="{{ asset('bundles/front/js/gmaps.js')}}"></script>
+
+	<script>
+    var map = new GMaps({
+      el: '#map',
+      lat: 50.62925,
+      lng: 3.057256000000052
+    });
+
+	</script>
+{% endblock %}
